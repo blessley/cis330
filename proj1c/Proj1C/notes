@@ -1,0 +1,20 @@
+gcc -v
+
+ldd ./hello
+otool -L
+
+gcc -shared -fpic -o empty.so empty.c
+
+echo $LD_LIBRARY_PATH
+
+size ./hello
+
+nm -S hello | grep bank
+nm -u main.o | grep bar
+
+./hello &
+jobs -x pmap -q %1
+
+gcc -Wall -g
+
+make -n
