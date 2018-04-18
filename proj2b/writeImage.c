@@ -17,13 +17,13 @@ int main(int argc, char *argv[])
   //2D image with 0-index at bottom left corner
   //Indexing proceeds left-to-right, bottom-to-top
   //Last index (w*h - 1) is top left and first value written
-  int i, j, id = totalPixels-1; 
+  int i, j, id; 
   for (i = 0; i < h; i++)
   {
     for (j = 0; j < w; j++)
     {
+      id = h*i + j;
       fwrite(&id, sizeof(int), 1, outFile);
-      id--;
     }
   } 
   fclose(outFile);

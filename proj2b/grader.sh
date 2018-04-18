@@ -1,32 +1,35 @@
 #!/bin/sh
 
+INPUT=~/hank/public_html/330/projects/2B/2B_binary_file
+OUTPUT=/..../some/path/ASCII_OUTPUT
+
 if [[ $# != 1 ]] ; then
    echo "Usage: $0 <c file>"
    exit 1
 fi
 
-gcc -o proj_2B $1
+gcc -o proj2B $1
 if [[ $? != 0 ]] ; then
    echo "Compile failure!"
    exit 1
 fi
 
-rm -f ./binary_output
-./proj_2B ~hank/public_html/330/projects/2B/binary_input ./binary_output
+rm -f ./ASCII_output
+./proj_2B $INPUT ./ASCII_output
 
-if [[ ! -f ./binary_output ]] ; then
+if [[ ! -f ./ASCII_output ]] ; then
    echo "You did not generate the correct file output name."
    exit 1
 fi
 
-diff ~hank/public_html/330/projects/2B/binary_output ./binary_output
+diff $OUTPUT ./ASCII_output
 if [[ $? != 0 ]] ; then
-   echo "Your output is not correct
+   echo "Your output is not correct."
    exit 1
 fi
 
 echo "Your program appears to be working correctly."
-echo "It compilers, runs, and generates the correct output."
-echo "Please upload this c file to Canvas."
+echo "It compiles, runs, and generates the correct output."
+echo "Please upload this c file to Canvas, as part of the tar file instructions in the 2B prompt."
 echo "Grading will consist of the steps performed by this script, complemented by inspection of your code."
 
