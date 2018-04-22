@@ -1,7 +1,7 @@
-#!/bin/sh
+#!/bin/ksh
 
-INPUT=~/hank/public_html/330/projects/2B/2B_binary_file
-OUTPUT=/..../some/path/ASCII_OUTPUT
+INPUT=~hank/public_html/330/projects/2B/2B_binary_file
+CORRECT_OUTPUT=~hank/public_html/330/projects/2B/ASCII_output
 
 if [[ $# != 1 ]] ; then
    echo "Usage: $0 <c file>"
@@ -15,14 +15,14 @@ if [[ $? != 0 ]] ; then
 fi
 
 rm -f ./ASCII_output
-./proj_2B $INPUT ./ASCII_output
+./proj2B $INPUT ASCII_output
 
-if [[ ! -f ./ASCII_output ]] ; then
+if [[ ! -f ASCII_output ]] ; then
    echo "You did not generate the correct file output name."
    exit 1
 fi
 
-diff $OUTPUT ./ASCII_output
+diff $CORRECT_OUTPUT ASCII_output
 if [[ $? != 0 ]] ; then
    echo "Your output is not correct."
    exit 1
