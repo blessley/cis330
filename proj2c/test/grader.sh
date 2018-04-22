@@ -1,8 +1,7 @@
 #!/bin/ksh
 
 ID="2C"
-#PROJ_DIR="~hank/public_html/330.S17/projects/2C"
-PROJ_DIR="/Users/brent/cis330/proj2c"
+PROJ_DIR="~hank/public_html/330.S17/projects/2C"
 DRIVER_PROG="${PROJ_DIR}/driver_2C.c"
 PROTO_HEADER="${PROJ_DIR}/prototypes.h"
 CORRECT_OUTPUT="${PROJ_DIR}/driver_output"
