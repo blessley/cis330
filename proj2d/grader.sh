@@ -1,22 +1,14 @@
 #!/bin/ksh
 
 ID="2D"
-#PROJ_DIR="/home/users/hank/public_html/330/projects/2D"
-PROJ_DIR="/Users/heiyan/Documents/cis330/proj2d"
+PROJ_DIR="/home/users/hank/public_html/330/projects/2D"
 DRIVER_PROG="${PROJ_DIR}/driver_2D.c"
-PROTO_HEADER="${PROJ_DIR}/prototypes.h"
 CORRECT_OUTPUT="${PROJ_DIR}/driver_output"
 OUT_NAME="my_output"
 EXEC_NAME="project_${ID}"
 
 
 #Check if files were modified
-diff $PROTO_HEADER ./prototypes.h
-if [[ $? != 0 ]] ; then
-   echo "prototypes.h should not be modified."
-   exit 1
-fi
-
 diff $DRIVER_PROG ./driver_2D.c
 if [[ $? != 0 ]] ; then
    echo "driver_2D.c should not be modified."
