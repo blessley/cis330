@@ -22,18 +22,33 @@ typedef struct
   double pt4[2]; //Top right
 } Rectangle;
 
+typedef enum
+{
+  REC,
+  CIR,
+  TRI
+} ShapeType;
+
+typedef union
+{
+  Rectangle r;
+  Circle c;
+  Triangle t;
+} ShapeUnion;
+
+
 struct Shape;
 
 typedef struct
 {
-  
-
-
+  double (*GetArea)(struct Shape *);
+  void (*GetBoundingBox)(struct Shape *, double *);
 } FunctionTable;
 
 struct Shape
 {
-
-
-}
+  ShapeUnion u;
+  ShapeType t;
+  FunctionTable ft;
+};
 

@@ -1,9 +1,9 @@
 #!/bin/ksh
 
-ID="2C"
-#PROJ_DIR="~hank/public_html/330.S17/projects/2C"
-PROJ_DIR="/Users/brent/cis330/proj2c"
-DRIVER_PROG="${PROJ_DIR}/driver_2C.c"
+ID="2D"
+#PROJ_DIR="/home/users/hank/public_html/330/projects/2D"
+PROJ_DIR="/Users/heiyan/Documents/cis330/proj2d"
+DRIVER_PROG="${PROJ_DIR}/driver_2D.c"
 PROTO_HEADER="${PROJ_DIR}/prototypes.h"
 CORRECT_OUTPUT="${PROJ_DIR}/driver_output"
 OUT_NAME="my_output"
@@ -17,21 +17,15 @@ if [[ $? != 0 ]] ; then
    exit 1
 fi
 
-diff $DRIVER_PROG ./driver_2C.c
+diff $DRIVER_PROG ./driver_2D.c
 if [[ $? != 0 ]] ; then
-   echo "driver_2C.c should not be modified."
+   echo "driver_2D.c should not be modified."
    exit 1
 fi
 
 #Check if the output file name is correct
 if [[ ! -f ./$OUT_NAME ]] ; then
    echo "The output file name is not correct."
-   exit 1
-fi
-
-#Check that a readme was provided
-if [[ ! -f ./README ]] ; then
-   echo "A README was not provided."
    exit 1
 fi
 
@@ -56,6 +50,6 @@ fi
 
 echo "Your program appears to be working correctly."
 echo "It compiles, runs, and generates the correct output."
-echo "Please upload your code to Canvas, following the tar file instructions in the ${ID} prompt."
+echo "Please upload your code to Canvas, following the instructions in the ${ID} prompt."
 echo "Grading will consist of the steps performed by this script, complemented by inspection of your code."
 

@@ -1,15 +1,14 @@
-
 #include <my_struct.h>
 
-void InitializeCircle(Circle *, double radius, double originX, double originY);
-void InitializeRectangle(Rectangle *, double minX, double maxX, double minY, double maxY);
-void InitializeTriangle(Triangle *, double pt1X, double pt2X, double minY, double maxY);
+void InitializeCircle(struct Shape *, double radius, double originX, double originY);
+void InitializeRectangle(struct Shape *, double minX, double maxX, double minY, double maxY);
+void InitializeTriangle(struct Shape *, double pt1X, double pt2X, double minY, double maxY);
 
-double GetCircleArea(Circle *);
-double GetRectangleArea(Rectangle *);
-double GetTriangleArea(Triangle *);
+double GetCircleArea(struct Shape *);
+double GetRectangleArea(struct Shape *);
+double GetTriangleArea(struct Shape *);
 
-void GetCircleBoundingBox(Circle *, double *);
-void GetRectangleBoundingBox(Rectangle *, double *);
-void GetTriangleBoundingBox(Triangle *, double *);
+void GetCircleBoundingBox(struct Shape *, double *);
+void GetRectangleBoundingBox(struct Shape *, double *);
+void GetTriangleBoundingBox(struct Shape *, double *);
 
