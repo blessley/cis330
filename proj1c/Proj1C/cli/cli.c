@@ -30,6 +30,12 @@ int main(int argc, char *argv[])
         mathFunction = exp330;
     else if (strcmp(argv[1], "log") == 0)
         mathFunction = log330;
+    else if (strcmp(argv[1], "arcsin") == 0)
+        mathFunction = arcsin330;
+    else if (strcmp(argv[1], "arccos") == 0)
+        mathFunction = arccos330;
+    else if (strcmp(argv[1], "arctan") == 0)
+        mathFunction = arctan330;
     else
         foundFunction = 0;
 
