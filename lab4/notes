@@ -1,0 +1,16 @@
+really just a reinterpret_cast from a float32 to a uint16 (first 16 bits of a float)
+
+reduced memory storage
+
+added noise helps regularize the network
+
+the cut-off 7 mantissa bits aren't really necessary
+
+backpropogation algorithms and gradient learning algs are resilient to precision errors
+
+half-precision arithmetic has twice the throughput of single-precision arithmetic on GPU/TPU
+
+weight/gradient values normally fall within a moderate range of values
+
+8 bits are actually totally performant for neural network computations (tensorflow lite for mobile, for example)
+
