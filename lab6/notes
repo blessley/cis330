@@ -1,0 +1,7 @@
+read into uninitialized buffer
+access after end of array
+allocate memory with fishy width height values
+calling strlen with incorrect filename
+
+
+

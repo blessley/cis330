@@ -7,7 +7,7 @@
 class Filter : public Sink, public Source
 {
     public:
-    virtual void Execute(void) = 0;
+    virtual void Execute(void) {};
 };
 
 class Shrinker : public Filter
