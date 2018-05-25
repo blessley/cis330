@@ -18,21 +18,6 @@ void invertRGB(Pixel *buff)
 }
 
 
-Image* readImage(char *filename)
-{
-
-
-
-
-}
-
-void writeImage(char *filename, Image *img)
-{
-
-
-
-}
-
 
 int main()
 {
